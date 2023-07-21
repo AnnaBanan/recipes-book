@@ -10,7 +10,10 @@ export class RecipeService {
       'Summer Drink',
       'Nice on Ice. A very refreshing drink.',
       'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505',
-      [new Ingredient('apple', 2, 'pieces'), new Ingredient('water', 100, 'ml')]
+      [
+        new Ingredient('apple', 2, 'pieces'),
+        new Ingredient('water', 100, 'ml')
+      ]
     ),
     new Recipe(
       'Hangover Breakfast',
@@ -26,7 +29,7 @@ export class RecipeService {
   ];
 
   getRecipes() {
-    // slice to get a copy of array
+    // slice to get a copy of array and don't change the original
     return this.recipes.slice();
   }
 }
