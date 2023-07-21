@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Pages } from 'src/app/shared/types';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +6,5 @@ import { Pages } from 'src/app/shared/types';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Output() pageRequest = new EventEmitter<Pages>();
-  newPage: Pages = 'recipes';
 
-  pageRecipes() {
-    this.newPage = 'recipes';
-    this.pageRequest.emit(this.newPage);
-  }
-  pageShopping() {
-    this.newPage = 'shopping';
-    this.pageRequest.emit(this.newPage);
-  }
 }

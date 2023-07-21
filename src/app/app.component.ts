@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { Pages } from './shared/types';
-
+import {Component} from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,8 +6,5 @@ import { Pages } from './shared/types';
 })
 export class AppComponent {
   title = 'recipes-book';
-  page: Pages = 'recipes';
-  switchPage(newPage: Pages = 'recipes') {
-    this.page = newPage;
-  }
+
 }

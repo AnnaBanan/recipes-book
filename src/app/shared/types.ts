@@ -1,1 +1,1 @@
-export type Pages = 'recipes' | 'shopping';
+// export type Pages = 'recipes' | 'shopping';
