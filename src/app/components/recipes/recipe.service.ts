@@ -1,12 +1,11 @@
-import { EventEmitter } from '@angular/core';
 import { Recipe } from './recipes.model';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 
 export class RecipeService {
-  getDetails = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe(
+      1,
       'Summer Drink',
       'Nice on Ice. A very refreshing drink.',
       'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505',
@@ -16,6 +15,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
+      2,
       'Hangover Breakfast',
       'Best food for your recovery.',
       'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505',
@@ -28,8 +28,17 @@ export class RecipeService {
     ),
   ];
 
-  getRecipes() {
+  getAllRecipes() {
     // slice to get a copy of array and don't change the original
     return this.recipes.slice();
+  }
+
+  getRecipe(id:number):Recipe|undefined {
+    const recipe = this.recipes.find(
+      (recipe:Recipe) => {
+        return recipe.id === id;
+      }
+    );
+    return recipe;
   }
 }

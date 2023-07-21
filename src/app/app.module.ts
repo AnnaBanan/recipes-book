@@ -13,6 +13,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './components/shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
+import { NoRecipeComponent } from './components/recipes/no-recipe/no-recipe.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
+    NoRecipeComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, RouterLink, RouterOutlet, RouterLinkActive],
   providers: [ShoppingListService],

@@ -5,7 +5,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>{{ recipe.name }}</h1>
+    <h1>{{ recipeDetails.name }}</h1>
   </div>
 </div>
 <div class="row">
@@ -20,10 +20,10 @@
           <a class="pointer" (click)="AddrecipeIngredientsToShoppinglist()">Add to Shopping list</a>
         </li>
         <li>
-          <a href="#">Edit recipe</a>
+          <a class="pointer">Edit recipe</a>
         </li>
         <li>
-          <a href="#">Delete recipe</a>
+          <a class="pointer">Delete recipe</a>
         </li>
       </ul>
     </div>
@@ -33,14 +33,14 @@
 <br />
 <div class="row">
   <div class="col-xs-12">
-    <p>{{ recipe.description }}</p>
+    <p>{{ recipeDetails.description }}</p>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
     <h3>Ingredients</h3>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+      <li class="list-group-item" *ngFor="let ingredient of recipeDetails.ingredients">
         {{ ingredient.amount }} {{ ingredient.unit }} {{ ingredient.name }}
       </li>
     </ul>
