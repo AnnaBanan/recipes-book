@@ -13,6 +13,7 @@ export class RecipeDetailComponent implements OnInit{
   recipeDetails!: Recipe;
 constructor(private shoppingService: ShoppingListService,
             private route: ActivatedRoute,
+            private router: Router,
             private recipeService:RecipeService) {
 }
   AddrecipeIngredientsToShoppinglist(){
@@ -31,5 +32,8 @@ constructor(private shoppingService: ShoppingListService,
         this.recipeDetails = recipe;
       }
     });
+  }
+  onEditRecipe(){
+  this.router.navigate(["edit"],{relativeTo: this.route})
   }
 }

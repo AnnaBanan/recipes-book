@@ -14,6 +14,7 @@ import { ShoppingListService } from './components/shopping-list/shopping-list.se
 import { AppRoutingModule } from './app-routing.module';
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import { NoRecipeComponent } from './components/recipes/no-recipe/no-recipe.component';
+import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NoRecipeComponent } from './components/recipes/no-recipe/no-recipe.comp
     ShoppingEditComponent,
     DropdownDirective,
     NoRecipeComponent,
+    RecipeEditComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, RouterLink, RouterOutlet, RouterLinkActive],
   providers: [ShoppingListService],

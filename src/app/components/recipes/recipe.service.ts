@@ -33,12 +33,16 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
-  getRecipe(id:number):Recipe|undefined {
-    const recipe = this.recipes.find(
-      (recipe:Recipe) => {
-        return recipe.id === id;
-      }
-    );
-    return recipe;
+  getRecipe(index:number){
+    return this.recipes[index];
   }
+  // use the id in the object for routing:
+  // getRecipe(id:number):Recipe|undefined {
+  //   const recipe = this.recipes.find(
+  //     (recipe:Recipe) => {
+  //       return recipe.id === id;
+  //     }
+  //   );
+  //   return recipe;
+  // }
 }
