@@ -9,4 +9,5 @@ import {ActivatedRoute, Params} from '@angular/router';
   styleUrls: ['./recipes.component.scss'],
   providers: [RecipeService],
 })
-export class RecipesComponent {}
+export class RecipesComponent {
+}

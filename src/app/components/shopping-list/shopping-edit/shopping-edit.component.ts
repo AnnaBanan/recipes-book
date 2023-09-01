@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-shopping-edit',
@@ -12,14 +13,17 @@ export class ShoppingEditComponent {
 
   constructor(private shoppingListService: ShoppingListService) {}
 
-  addIngredient(name: string, amount: string, unit: string) {
-    if (!isNaN(parseFloat(amount)) && name && unit) {
-      const amountValue = parseFloat(amount);
-      const newIngredient = new Ingredient(name, amountValue, unit);
+  addIngredient(form: NgForm) {
+    const nameValue = form.value.ingredientName;
+    const amountValue = parseFloat(form.value.ingredientAmount);
+    const unitValue = form.value.ingredientUnit;
+    if (!isNaN(amountValue) && nameValue && unitValue) {
+      const newIngredient = new Ingredient(nameValue, amountValue, unitValue );
       this.shoppingListService.onAddIngredient(newIngredient);
       this.FieldError = false;
     } else {
       this.FieldError = true;
     }
   }
+
 }
