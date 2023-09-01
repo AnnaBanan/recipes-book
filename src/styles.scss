@@ -2,3 +2,10 @@
 .pointer{
   cursor: pointer;
 }
+
+input.ng-invalid.ng-touched{
+  border: 1px solid #df0033;
+  + p{
+    color: #df0033;
+  }
+}

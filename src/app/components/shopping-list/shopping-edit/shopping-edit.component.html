@@ -11,7 +11,10 @@
             id="name"
             class="form-control"
             placeholder="Ingredient Name"
+            required
+            #name="ngModel"
           />
+          <p *ngIf="!name.valid && name.touched">Please fill in a name!</p>
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
@@ -21,7 +24,10 @@
             type="number"
             id="amount"
             class="form-control"
+            required
+            #amount="ngModel"
           />
+          <p *ngIf="!amount.valid && amount.touched">Please fill in the amount!</p>
         </div>
         <div class="col-sm-2 form-group">
           <label for="unit">Unit</label>
@@ -31,10 +37,13 @@
             type="text"
             id="unit"
             class="form-control"
+            required
+            #unit="ngModel"
           />
+          <p *ngIf="!unit.valid && unit.touched">Please fill in the unit!</p>
         </div>
       </div>
-      <p *ngIf="FieldError">Please fill all fields!</p>
+
       <div class="row">
         <div class="col-xs-12">
           <button
